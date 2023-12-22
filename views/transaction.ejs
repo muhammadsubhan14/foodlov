@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Cart</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Optional: Add your custom styles here -->
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .navbar {
+        background-color: #007bff;
+        color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .navbar-toggler-icon {
+        color: #fff;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .card-header {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      .form-label {
+        font-weight: bold;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border: 1px solid #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Food Lovers</a>
+        <a class="navbar-brand" href="/products">Back</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Cart</h3>
+            </div>
+            <div class="card-body">
+              <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                  <div class="col">
+                    <div class="card h-100">
+                      <img
+                        src="<%= product.imageUrl %>"
+                        class="card-img-top"
+                        alt="product pict"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text"><%= product.description %></p>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Category: <%= product.Category.name %>
+                          </li>
+                          <li class="list-group-item">
+                            Price: <%= product.formatPrice %>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="card-footer"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <form action="/transaction/:id" method="POST">
+                <div class="mb-3">
+                  <label for="Delivery" class="form-label">Delivery</label>
+                  <select class="form-select" id="Delivery" name="Delivery">
+                    <option value="Gojek">Gojek</option>
+                    <option value="Shopee">Shopee Food</option>
+                    <option value="Grab">Grab Food</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="payment" class="form-label">Payment</label>
+                  <select class="form-select" id="payment" name="payment">
+                    <option value="JENIUS">JENIUS</option>
+                    <option value="JAGO">JAGO</option>
+                    <option value="OVO">OVO</option>
+                    <option value="BCA">BCA</option>
+                    <option value="Mandiri">Mandiri</option>
+                    <option value="Gopay">Gopay</option>
+                    <option value="DANA">DANA</option>
+                    <option value="CIMB">CIMB</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Checkout</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, but required for certain features like the dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>List Food</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .navbar {
+        background-color: #007bff;
+        color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .navbar-toggler-icon {
+        color: #fff;
+      }
+
+      .navbar-nav {
+        margin-left: auto;
+      }
+
+      .nav-item {
+        margin-right: 20px;
+      }
+
+      .nav-link {
+        color: #fff;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .nav-link:hover {
+        color: #f8f9fa;
+      }
+
+      .btn-sort {
+        margin: 5px;
+      }
+
+      .card {
+        transition: transform 0.2s;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/admin">Foods</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <form action="/products" method="get" class="text-center">
+        <input type="submit" class="btn btn-light btn-sort" value="All" />
+        <input
+          type="submit"
+          class="btn btn-light btn-sort"
+          value="Japanese"
+          name="sortCategory"
+        />
+        <input
+          type="submit"
+          class="btn btn-light btn-sort"
+          value="Malaysia"
+          name="sortCategory"
+        />
+        <input
+          type="submit"
+          class="btn btn-light btn-sort"
+          value="Indonesia"
+          name="sortCategory"
+        />
+        <input
+          type="submit"
+          class="btn btn-light btn-sort"
+          value="India"
+          name="sortCategory"
+        />
+        <input
+          type="submit"
+          class="btn btn-light btn-sort"
+          value="China"
+          name="sortCategory"
+        />
+      </form>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+        <% product.forEach((el, index) => { %>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="<%= el.imageUrl %>"
+              class="card-img-top"
+              alt="product pict"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= el.name %></h5>
+              <p class="card-text"><%= el.description %></p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Category: <%= el.Category.name %>
+                </li>
+                <li class="list-group-item">Stock: <%= el.stock %></li>
+                <li class="list-group-item">Price: <%= el.formatPrice %></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <form action="/transaction/<%= el.id %>">
+                <button type="submit" class="btn btn-primary">
+                  Add To Cart
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

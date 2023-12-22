@@ -1,0 +1,50 @@
+[
+    {
+        "name" : "Japanese Chicken Curry",
+        "description" : "Delicious Japanese chicken curry recipe for a weeknight dinner! Tender pieces of chicken, carrots, and potatoes cooked in a rich, savory curry sauce, this Japanese version of curry is a must-have for your family meal.", 
+        "price" : 75000,
+        "imageUrl" : "https://www.justonecookbook.com/wp-content/uploads/2021/10/Japanese-Chicken-Curry-3769-II.jpg",
+        "CategoryId" : 1,
+        "stock" : 5
+    },
+    {
+        "name" : "Ramen",
+        "description" : "Ramen (/ˈrɑːmən/), is a Japanese noodle dish.", 
+        "price" : 120000,
+        "imageUrl" : "https://i.pinimg.com/originals/66/9f/53/669f53638e72805edb4785e6d913530a.jpg",
+        "CategoryId" : 1,
+        "stock" : 5
+    },
+    {
+        "name" : "Sake",
+        "description" : "Sake or saké (酒, sake, /ˈsɑːki, ˈsækeɪ/ SAH-kee, SAK-ay),  also referred to as Japanese rice wine,[6] is an alcoholic beverage of Japanese origin made by fermenting rice.", 
+        "price" : 300000,
+        "imageUrl" : "https://th.bing.com/th/id/OIP.dpQzosu3YK_Eogu3t_6_fgHaFj?rs=1&pid=ImgDetMain",
+        "CategoryId" : 1,
+        "stock" : 5
+    },
+    {
+        "name" : "Rendang",
+        "description" : "Rendang (Minangkabau: randang; Jawi: رندڠ) adalah hidangan berbahan dasar daging yang dihasilkan dari proses memasak suhu rendah dalam waktu lama dengan menggunakan aneka rempah-rempah.", 
+        "price" : 25000,
+        "imageUrl" : "https://coconuts.co/wp-content/uploads/2016/11/rendang_1.jpg",
+        "CategoryId" : 3,
+        "stock" : 5
+    },
+    {
+        "name" : "Nasi Goreng",
+        "description" : "Nasi goreng (/ˌnɑːsi ɡɒˈrɛŋ/; Indonesian pronunciation: [ˈnasi ˈɡorɛŋ]) is a Southeast Asian fried rice dish, usually cooked with pieces of meat and vegetables.", 
+        "price" : 35000,
+        "imageUrl" : "https://img.jakpost.net/c/2016/06/24/2016_06_24_7079_1466755385._large.jpg",
+        "CategoryId" : 3,
+        "stock" : 5
+    },
+    {
+        "name" : "Peking Duck",
+        "description" : "Peking duck is served with oyster sauce, it tastes savory and delicious. What is typical of Peking ducks is the use of special duck meat, that is, ducks fed nutritious grain porridge for 20 days before slaughter.", 
+        "price" : 200000,
+        "imageUrl" : "https://miro.medium.com/v2/resize:fit:1200/1*nfaPwEk8lGpdK3l0ZZYMmw.jpeg",
+        "CategoryId" : 5,
+        "stock" : 5
+    }
+]
